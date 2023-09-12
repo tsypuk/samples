@@ -6,6 +6,10 @@
 *.tfstate.*
 **/.terraform.*
 
+**/easy-rsa*
+**/certs_*
+**/*.ovpn
+
 # Crash log files
 crash.log
 crash.*.log
@@ -33,6 +37,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
 
 .idea/
 .idea
