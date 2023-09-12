@@ -14,6 +14,6 @@
 
 - Generate Client&Server certificates for VPN connection: [gen_certs.sh](client-vpn/gen_certs.sh)
 - Patch AWS OpenVPN configuration: [patch_certs.sh](client-vpn/patch_certs.sh)
-- Terraform: [vpc.tf](client-vpn/vpc.tf) [vpn.tf](client-vpn/vpn.sh) [output.tf](client-vpn/output.tf)
+- Terraform: [vpc.tf](client-vpn/vpc.tf) [vpn.tf](client-vpn/vpn.tf) [output.tf](client-vpn/output.tf)
 - Post in Blog: [https://blog.tsypuk.com/posts/2023/09/11/aws-clientnpv-automated.html)
 - Date: 11.09.2023
