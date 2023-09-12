@@ -1,3 +1,7 @@
+## Infra
+
+![clien_vpn.png](https://blog.tsypuk.com/images/posts/vpn/infra.png)
+
 ## Generate Certificate 
 
 ```shell
