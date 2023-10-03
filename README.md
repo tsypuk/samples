@@ -17,3 +17,13 @@
 - Terraform: [vpc.tf](client-vpn/vpc.tf) [vpn.tf](client-vpn/vpn.tf) [output.tf](client-vpn/output.tf)
 - Post in Blog: [https://blog.tsypuk.com/posts/2023/09/11/aws-clientnpv-automated.html)
 - Date: 11.09.2023
+
+
+## CloudFormation IaC (DynamoDB)
+
+![dynamodb.png](https://blog.tsypuk.com/images/posts/dynamo/diagram.png)
+
+- NoSQL Workbench Export for Movies Table [nosql_workbench_export.json](dynamodb/Movies.json)
+- CloudFormation Template: [dynamodb_cf_template.json](dynamodb/movies_cf_template.json)
+- Post in Blog: [https://blog.tsypuk.com/posts/2023/10/01/dynamo-design.html)
+- Date: 03.10.2023

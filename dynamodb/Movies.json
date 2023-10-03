@@ -1,0 +1,150 @@
+{
+  "ModelName": "Holywood",
+  "ModelMetadata": {
+    "Author": "Roman Tsypuk",
+    "DateCreated": "Oct 02, 2023, 05:11 PM",
+    "DateLastModified": "Oct 03, 2023, 03:44 PM",
+    "Description": "Sample Database for Post about DynamoDB",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "Movies",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "Actor",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "Movie",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "Genre",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Year",
+          "AttributeType": "S"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "MoviesActorsIndex",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "Movie",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "Actor",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "Actor": {
+            "S": "Tom Cruise"
+          },
+          "Movie": {
+            "S": "Top Gun"
+          },
+          "Genre": {
+            "S": "Action"
+          },
+          "Year": {
+            "S": "2022"
+          }
+        },
+        {
+          "Actor": {
+            "S": "Miles Teller"
+          },
+          "Movie": {
+            "S": "Top Gun"
+          },
+          "Genre": {
+            "S": "Action"
+          },
+          "Year": {
+            "S": "2016"
+          }
+        },
+        {
+          "Actor": {
+            "S": "Miles Teller"
+          },
+          "Movie": {
+            "S": "War Dogs"
+          },
+          "Genre": {
+            "S": "Action"
+          },
+          "Year": {
+            "S": "2022"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "SampleDataFormats": {
+        "actor": [
+          "identifiers",
+          "Full name"
+        ],
+        "Movie": [
+          "dataTypes",
+          "String"
+        ],
+        "Actor": [
+          "dataTypes",
+          "String"
+        ],
+        "Genre": [
+          "dataTypes",
+          "String"
+        ],
+        "Year": [
+          "date",
+          "Year"
+        ]
+      },
+      "BillingMode": "PROVISIONED",
+      "ProvisionedCapacitySettings": {
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "AutoScalingRead": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        },
+        "AutoScalingWrite": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        }
+      }
+    }
+  ]
+}
