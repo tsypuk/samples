@@ -27,3 +27,12 @@
 - CloudFormation Template: [dynamodb_cf_template.json](dynamodb/movies_cf_template.json)
 - Post in Blog: [https://blog.tsypuk.com/posts/2023/10/01/dynamo-design.html)
 - Date: 03.10.2023
+
+## CloudFormation IaC (DynamoDB One-To-Many)
+
+![dynamodb.png](https://blog.tsypuk.com/images/posts/dynamo/diagram2.png)
+
+- NoSQL Workbench Export for Movies Table [nosql_workbench_export.json](dynamodb/Users.json)
+- CloudFormation Template: [dynamodb_cf_template.json](dynamodb/Users_cf_template.json)
+- Post in Blog: [https://blog.tsypuk.com/posts/2023/10/04/dynamo-one-to-many.html](https://blog.tsypuk.com/posts/2023/10/04/dynamo-one-to-many.html)
+- Date: 04.10.2023
