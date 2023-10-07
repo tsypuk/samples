@@ -1,0 +1,336 @@
+{
+  "ModelName": "Users",
+  "ModelMetadata": {
+    "Author": "Roman Tsypuk",
+    "DateCreated": "Oct 03, 2023, 06:41 PM",
+    "DateLastModified": "Oct 07, 2023, 12:33 PM",
+    "Description": "1 to many relationship models",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "Users",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "Username",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "FullName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "email",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "CreatedAt",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Address",
+          "AttributeType": "L"
+        },
+        {
+          "AttributeName": "OrderId",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Status",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "ItemId",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "ProductName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "Price",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "OrderStatusDate",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "PlacedId",
+          "AttributeType": "S"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "InvertedIndex",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "SK",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "PK",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "OrderStatusDate",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "PK",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "OrderStatusDate",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "PlacedId",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "PlacedId",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "PK": {
+            "S": "USER#maud"
+          },
+          "SK": {
+            "S": "#PROFILE#maud"
+          },
+          "Username": {
+            "S": "Maud_Runolfsdottir"
+          },
+          "FullName": {
+            "S": "Kent Barrows"
+          },
+          "email": {
+            "S": "Gennaro.Adams@gmail.com"
+          },
+          "CreatedAt": {
+            "S": "2023-03-23"
+          },
+          "Address": {
+            "L": [
+              {
+                "street": 111,
+                "State": "Nebraska"
+              }
+            ]
+          }
+        },
+        {
+          "PK": {
+            "S": "USER#geraldine"
+          },
+          "SK": {
+            "S": "#PROFILE#geraldine"
+          },
+          "Username": {
+            "S": "Geraldine_Johnson43"
+          },
+          "FullName": {
+            "S": "Constance Renner PhD"
+          },
+          "email": {
+            "S": "Deondre.Wintheiser@yahoo.com"
+          },
+          "CreatedAt": {
+            "S": "2023-03-23"
+          },
+          "Address": {
+            "L": [
+              {
+                "street": 222,
+                "state": "ca"
+              }
+            ]
+          }
+        },
+        {
+          "PK": {
+            "S": "USER#maud"
+          },
+          "SK": {
+            "S": "#ORDER#123"
+          },
+          "CreatedAt": {
+            "S": "2023-10-06"
+          },
+          "OrderId": {
+            "S": "123"
+          },
+          "Status": {
+            "S": "PLACED"
+          },
+          "OrderStatusDate": {
+            "S": "PLACED#2023-10-06"
+          },
+          "PlacedId": {
+            "S": "123"
+          }
+        },
+        {
+          "PK": {
+            "S": "USER#maud"
+          },
+          "SK": {
+            "S": "#ORDER#124"
+          },
+          "CreatedAt": {
+            "S": "2023-10-06"
+          },
+          "OrderId": {
+            "S": "124"
+          },
+          "Status": {
+            "S": "SHIPPED"
+          },
+          "OrderStatusDate": {
+            "S": "SHIPPED#2023-10-06"
+          }
+        },
+        {
+          "PK": {
+            "S": "ITEM#1"
+          },
+          "SK": {
+            "S": "#ORDER#123"
+          },
+          "ItemId": {
+            "S": "1"
+          },
+          "ProductName": {
+            "S": "Macbook"
+          },
+          "Price": {
+            "N": "1200"
+          }
+        },
+        {
+          "PK": {
+            "S": "ITEM#2"
+          },
+          "SK": {
+            "S": "#ORDER#123"
+          },
+          "ItemId": {
+            "S": "2"
+          },
+          "ProductName": {
+            "S": "AirPods"
+          },
+          "Price": {
+            "N": "150"
+          }
+        },
+        {
+          "PK": {
+            "S": "USER#maud"
+          },
+          "SK": {
+            "S": "#ORDER#777"
+          },
+          "CreatedAt": {
+            "S": "2023-10-07"
+          },
+          "OrderId": {
+            "S": "777"
+          },
+          "Status": {
+            "S": "PLACED"
+          },
+          "OrderStatusDate": {
+            "S": "PLACED#2023-10-07"
+          },
+          "PlacedId": {
+            "S": "777"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "SampleDataFormats": {
+        "PK": [
+          "dataTypes",
+          "String"
+        ],
+        "SK": [
+          "dataTypes",
+          "String"
+        ],
+        "Username": [
+          "identifiers",
+          "Username"
+        ],
+        "FullName": [
+          "identifiers",
+          "Full name"
+        ],
+        "email": [
+          "identifiers",
+          "Email"
+        ],
+        "CreatedAt": [
+          "date",
+          "ISO 8601 date and time"
+        ]
+      },
+      "BillingMode": "PROVISIONED",
+      "ProvisionedCapacitySettings": {
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "AutoScalingRead": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        },
+        "AutoScalingWrite": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        }
+      }
+    }
+  ]
+}

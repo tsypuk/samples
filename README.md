@@ -36,3 +36,10 @@
 - CloudFormation Template: [dynamodb_cf_template.json](dynamodb/Users_cf_template.json)
 - Post in Blog: [https://blog.tsypuk.com/posts/2023/10/04/dynamo-one-to-many.html](https://blog.tsypuk.com/posts/2023/10/04/dynamo-one-to-many.html)
 - Date: 04.10.2023
+
+![dynamodb.png](https://blog.tsypuk.com/images/posts/dynamo/diagram3.png)
+
+- NoSQL Workbench Export for Movies Table [nosql_workbench_export.json](dynamodb-filter/Users.json)
+- CloudFormation Template: [dynamodb_cf_template.json](dynamodb-filter/Users_cf_template.json)
+- Post in Blog: [https://blog.tsypuk.com/posts/2023/10/06/dynamo-filters.html](https://blog.tsypuk.com/posts/2023/10/06/dynamo-filters.html)
+- Date: 07.10.2023
