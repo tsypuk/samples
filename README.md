@@ -45,3 +45,11 @@
 - CloudFormation Template: [dynamodb_cf_template.json](dynamodb-filter/Users_cf_template.json)
 - Post in Blog: [https://blog.tsypuk.com/posts/2023/10/06/dynamo-filters.html](https://blog.tsypuk.com/posts/2023/10/06/dynamo-filters.html)
 - Date: 07.10.2023
+
+## Terraform IaC (Kinesis Firehose with S3)
+
+![kinesis.png](https://blog.tsypuk.com/images/posts/kinesis/infra.png)
+
+- Terraform Template: [firehose.tf](kinesis-agent/firehose.tf)
+- Post in Blog: [https://blog.tsypuk.com/posts/2023/10/17/kineses-agent.html)
+- Date: 05.10.2023
