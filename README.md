@@ -1,5 +1,13 @@
 # Samples for posts and articles:
 
+## AWS MachineLearning Comprehend & Rekongnition
+
+![augmented-200_70.png](aws_hlml/rekognition/augmented-200_70.png)
+
+- Jypyter Notebooks:[sa.ipynb](aws_hlml/rekognition/sa.ipynb)
+- Jypyter Notebooks:[aws_comprehend.ipynb](aws_hlml/comprehend/aws_comprehend.ipynb)
+- Date: 16.11.2023
+
 ## Terraform IaC (AWS API gateway with AWS_IAM auth type for HTTP endpoint)
 
 ![api-gw-iam.png](https://blog.tsypuk.com/images/posts/aws-apigw-iam/api-gw-iam.png)
