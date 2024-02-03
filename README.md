@@ -1,5 +1,10 @@
 # Samples for posts and articles:
 
+
+## S3 pre-signed URLs with reverse engineering
+
+[reverse-engineer.py](s3-signed/reverse-engineer.py)
+
 ## AWS MachineLearning Comprehend & Rekongnition
 
 ![augmented-200_70.png](aws_hlml/rekognition/augmented-200_70.png)
