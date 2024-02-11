@@ -30,6 +30,7 @@ RUN apk add speedtest-cli
 RUN apk add mc
 
 WORKDIR /
+CMD mkdir results
 ADD benchmark.py .
 
 # container without process - only for benchmarking

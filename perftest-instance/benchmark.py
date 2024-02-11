@@ -2,6 +2,8 @@ import re
 import subprocess
 import time
 
+results_folder = "results"
+
 
 def benchmark_network():
     # Run the speedtest --list command and capture its output
@@ -24,7 +26,7 @@ def benchmark_network():
             server_id = pattern.search(line).group(1)
             server_ids.append(server_id)
 
-    speedtest_file = open("speedtest_3.csv", "w")
+    speedtest_file = open(f"{results_folder}/speedtest.csv", "w")
     command_output = subprocess.check_output(['speedtest', '--secure', '--csv-header'], universal_newlines=True)
     lines = command_output.splitlines()
     for line in lines:
@@ -46,7 +48,7 @@ def benchmark_network():
 
 def benchmark_cpu():
     for threads in [1, 2, 4, 8, 16]:
-        sysbench_file = open(f"sysbench_cpu_{threads}.csv", "w")
+        sysbench_file = open(f"{results_folder}/sysbench_cpu_{threads}.csv", "w")
         command_output = subprocess.check_output(['sysbench', 'cpu', '--histogram=on', '--cpu-max-prime=20000', '--threads={}'.format(threads), 'run'], universal_newlines=True)
         # sysbench cpu --histogram=on run
         lines = command_output.splitlines()
@@ -58,7 +60,7 @@ def benchmark_cpu():
 
 def benchmark_memory():
     for threads in [1, 2, 4, 8, 16]:
-        sysbench_file = open(f"sysbench_memory_{threads}.csv", "w")
+        sysbench_file = open(f"{results_folder}/sysbench_memory_{threads}.csv", "w")
         command_output = subprocess.check_output(['sysbench', 'memory', '--histogram=on', '--threads={}'.format(threads), 'run'], universal_newlines=True)
         # sysbench cpu --histogram=on run
         lines = command_output.splitlines()
@@ -69,16 +71,17 @@ def benchmark_memory():
 
 
 def benchmark_disk_prepare_files():
-    command_output = subprocess.check_output(['sysbench', 'fileio', '--file-total-size=8G', 'prepare'], universal_newlines=True)
-    lines = command_output.splitlines()
-    for line in lines:
-        print(line)
+    subprocess.check_output(['sysbench', 'fileio', '--file-total-size=8G', 'prepare'], universal_newlines=True)
+
+
+def benchmark_disk_remove_files():
+    subprocess.check_output(['sysbench', 'fileio', '--file-total-size=8G', 'cleanup'], universal_newlines=True)
 
 
 def benchmark_disk():
     nproc = 2
     for block_size in ['16K', '32K', '64K', '1M', '64M', '128M']:
-        sysbench_file = open(f"sysbench_disk_{block_size}.csv", "w")
+        sysbench_file = open(f"{results_folder}/sysbench_disk_{block_size}.csv", "w")
         command_output = subprocess.check_output(
             ['sysbench', 'fileio', '--histogram=on', f'--file-block-size={block_size}', '--file-total-size=8G', '--file-test-mode=rndrw', f'--threads={nproc}', 'run'], universal_newlines=True)
         # sysbench cpu --histogram=on run
@@ -90,11 +93,12 @@ def benchmark_disk():
 
 if __name__ == '__main__':
     benchmark_network()
-    # time.sleep(5)
-    # benchmark_cpu()
-    # time.sleep(5)
-    # benchmark_memory()
-    # time.sleep(5)
-    # benchmark_disk_prepare_files()
-    # time.sleep(5)
-    # benchmark_disk()
+    time.sleep(5)
+    benchmark_cpu()
+    time.sleep(5)
+    benchmark_memory()
+    time.sleep(5)
+    benchmark_disk_prepare_files()
+    time.sleep(5)
+    benchmark_disk()
+    benchmark_disk_remove_files()
