@@ -2,6 +2,7 @@ from unittest import TestCase
 from render_sysbnech import parse_latency
 from render_sysbnech import parse_memory
 from render_sysbnech import parse_cpu
+from render_sysbnech import parse_disk
 
 
 class Test(TestCase):
@@ -64,6 +65,26 @@ class Test(TestCase):
 
         for case in testcases:
             actual = parse_cpu(case['latency_output'])
+            self.assertEqual(
+                case["expected"],
+                actual,
+                "failed test expected {}, actual {}".format(case["expected"], actual),
+            )
+
+    def test_parse_disk(self):
+        testcases = [
+            {
+                "latency_output": "    read, MiB/s:                  0.36",
+                "expected": 0.36
+            },
+            {
+                "latency_output": "    written, MiB/s:               0.24",
+                "expected": 0.24
+            },
+        ]
+
+        for case in testcases:
+            actual = parse_disk(case['latency_output'])
             self.assertEqual(
                 case["expected"],
                 actual,
