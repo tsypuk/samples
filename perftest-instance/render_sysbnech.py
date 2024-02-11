@@ -1,9 +1,11 @@
 import re
 
+import numpy as np
 from matplotlib import pyplot as plt
 
 categories = []
 values = []
+benchmarks = {}
 
 
 def parse_latency(line):
@@ -58,7 +60,7 @@ def parse_graphs(file_name):
                 latency = True
 
             if 'MiB transferred' in line:
-                results['memory'] = parse_memory(line)
+                results['memory'] = parse_memory(line)[1]
 
             if 'events per second:' in line:
                 results['cpu'] = parse_cpu(line)
@@ -69,8 +71,8 @@ def parse_graphs(file_name):
         results['categories'] = categories
         results['values'] = values
 
-        print(results)
-        draw_latency_graphs(f'latency/{file_name}.png',results['categories'], results['values'])
+        benchmarks[file_name] = results
+        draw_latency_graphs(f'latency/{file_name}.png', results['categories'], results['values'])
 
 
 def draw_latency_graphs(file_name, categories, values):
@@ -90,5 +92,58 @@ def draw_latency_graphs(file_name, categories, values):
     plt.savefig(file_name, bbox_inches='tight', dpi=300)
 
 
+def draw_horizontal_bars(benchmarks, type, metric):
+    instances = []
+    performance = []
+    for k in benchmarks.keys():
+        instances.append(k)
+
+    for v in benchmarks.values():
+        performance.append(v[type])
+
+    plt.figure(figsize=(16, 10))
+    fig, ax = plt.subplots()
+    y_pos = np.arange(len(instances))
+
+    bar = ax.barh(y_pos, performance, label='Download Speed', align='center', alpha=0.7, color=get_colors(len(instances)), height=0.5)
+    for rect in bar:
+        width = rect.get_width()
+        ax.annotate('{}'.format(width),
+                    xy=(width, rect.get_y() + rect.get_height() / 2),
+                    xytext=(3, 0),  # 3 points horizontal offset
+                    textcoords="offset points",
+                    ha='left', va='center')
+
+    ax.set_yticks(y_pos, labels=instances)
+    ax.invert_yaxis()
+    ax.set_xlabel(f'Performance: {metric}')
+
+    plt.savefig(f'{type}.png', bbox_inches='tight', dpi=300)
+    plt.show()
+
+
+def get_colors(size: int):
+    colors = ['#FFA500', '#FF0000', '#008000', '#0000FF', '#800080', '#FFFF00', '#00BFFF', '#FF1493', '#FFD700']
+    return colors[:size]
+
+
 if __name__ == '__main__':
+    parse_graphs("sysbench.cpu.output")
+    parse_graphs("sysbench.cpu2.output")
+    parse_graphs("sysbench.cpu3.output")
+    parse_graphs("sysbench.cpu4.output")
+
+
+    draw_horizontal_bars(benchmarks, 'cpu', 'events per second')
+
+    print(benchmarks)
+    benchmarks = {}
+    parse_graphs("sysbench.memory.output")
+    print(benchmarks)
+    draw_horizontal_bars(benchmarks, 'memory', 'transferred MiB/sec')
+
+    benchmarks = {}
     parse_graphs("sysbench.disk.output")
+    print(benchmarks)
+    draw_horizontal_bars(benchmarks, 'disk_read', 'read, MiB/s')
+    draw_horizontal_bars(benchmarks, 'disk_write', 'written, MiB/s')
