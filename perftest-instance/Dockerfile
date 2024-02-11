@@ -28,5 +28,9 @@ RUN apk add sysbench
 # speedtest
 RUN apk add speedtest-cli
 RUN apk add mc
+
+WORKDIR /
+ADD benchmark.py .
+
 # container without process - only for benchmarking
 CMD tail -f /dev/null
