@@ -1,5 +1,9 @@
 # Samples for posts and articles:
 
+## EC2 VoIP Asterisk & FreePBX
+
+- [ec2_asterisk.sh](asterisk/ec2_asterisk.sh)
+- [ec2_freepbx.sh](asterisk/ec2_freepbx.sh)
 
 ## S3 pre-signed URLs with reverse engineering
 
@@ -30,7 +34,6 @@
 - Terraform: [vpc.tf](client-vpn/vpc.tf) [vpn.tf](client-vpn/vpn.tf) [output.tf](client-vpn/output.tf)
 - Post in Blog: [https://blog.tsypuk.com/posts/2023/09/11/aws-clientnpv-automated.html)
 - Date: 11.09.2023
-
 
 ## CloudFormation IaC (DynamoDB)
 
