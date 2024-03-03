@@ -1,0 +1,31 @@
+{
+  "family": "benchmark_arm_025vcpu_05g",
+  "containerDefinitions": [
+    {
+      "name": "benchmark_arm_025vcpu_05g",
+      "image": "rtsypuk/benchmark",
+      "cpu": 256,
+      "memory": 512,
+      "portMappings": [],
+      "essential": true,
+      "environment": [],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "ulimits": [],
+      "systemControls": []
+    }
+  ],
+  "taskRoleArn": "arn:aws:iam::123456789012:role/tasknRole",
+  "executionRoleArn": "arn:aws:iam::424001940470:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "runtimePlatform": {
+    "cpuArchitecture": "ARM64",
+    "operatingSystemFamily": "LINUX"
+  }
+}

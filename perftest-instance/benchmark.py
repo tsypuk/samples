@@ -1,5 +1,6 @@
 import re
 import subprocess
+import sys
 import time
 
 results_folder = "results"
@@ -70,6 +71,15 @@ def benchmark_memory():
         time.sleep(5)
 
 
+def get_cpuinfo():
+    sysbench_file = open(f"{results_folder}/cpuinfo.raw", "w")
+    command_output = subprocess.check_output(['cat', '/proc/cpuinfo'], universal_newlines=True)
+    lines = command_output.splitlines()
+    for line in lines:
+        sysbench_file.write(line + "\n")
+    sysbench_file.write("\n")
+
+
 def benchmark_disk_prepare_files():
     subprocess.check_output(['sysbench', 'fileio', '--file-total-size=8G', 'prepare'], universal_newlines=True)
 
@@ -91,7 +101,21 @@ def benchmark_disk():
         sysbench_file.write("\n")
 
 
+def package(instance_type):
+    subprocess.run(["tar", "-czvf", f"{instance_type}.tar.gz", "results"])
+
+
+def write_to_s3(instance_type):
+    bucket = 'benres2024'
+    subprocess.run(["aws", "s3", "cp", f"{instance_type}.tar.gz", f"s3://{bucket}"])
+
+
 if __name__ == '__main__':
+    instance_type = "default"
+    if len(sys.argv) > 1:
+        instance_type = sys.argv[1]
+
+    get_cpuinfo()
     benchmark_network()
     time.sleep(5)
     benchmark_cpu()
@@ -102,3 +126,5 @@ if __name__ == '__main__':
     time.sleep(5)
     benchmark_disk()
     benchmark_disk_remove_files()
+    package(instance_type)
+    write_to_s3(instance_type)

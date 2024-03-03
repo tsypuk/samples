@@ -28,6 +28,7 @@ RUN apk add sysbench
 # speedtest
 RUN apk add speedtest-cli
 RUN apk add mc
+RUN apk add aws-cli
 
 WORKDIR /
 CMD mkdir results
