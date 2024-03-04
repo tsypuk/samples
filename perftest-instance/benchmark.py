@@ -100,6 +100,13 @@ def benchmark_disk():
             sysbench_file.write(line + "\n")
         sysbench_file.write("\n")
 
+def free_mem():
+    sysbench_file = open(f"{results_folder}/free_mem.raw", "w")
+    command_output = subprocess.check_output(['free', '-h'], universal_newlines=True)
+    lines = command_output.splitlines()
+    for line in lines:
+        sysbench_file.write(line + "\n")
+    sysbench_file.write("\n")
 
 def package(instance_type):
     subprocess.run(["tar", "-czvf", f"{instance_type}.tar.gz", "results"])
@@ -116,6 +123,7 @@ if __name__ == '__main__':
         instance_type = sys.argv[1]
 
     get_cpuinfo()
+    free_mem()
     benchmark_network()
     time.sleep(5)
     benchmark_cpu()

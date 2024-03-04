@@ -1,3 +1,4 @@
+import os
 import re
 
 import numpy as np
@@ -71,8 +72,9 @@ def parse_graphs(file_name):
         results['categories'] = categories
         results['values'] = values
 
-        benchmarks[file_name] = results
-        draw_latency_graphs(f'latency/{file_name}.png', results['categories'], results['values'])
+        filename = os.path.basename(file_name)
+        benchmarks[filename] = results
+        draw_latency_graphs(f'latency/{filename}.png', results['categories'], results['values'])
 
 
 def draw_latency_graphs(file_name, categories, values):
@@ -128,29 +130,30 @@ def get_colors(size: int):
 
 
 if __name__ == '__main__':
-    # parse_graphs("remote/results/sysbench_cpu_1.csv")
-    # parse_graphs("remote/results/sysbench_cpu_2.csv")
-    # parse_graphs("remote/results/sysbench_cpu_4.csv")
-    # parse_graphs("remote/results/sysbench_cpu_8.csv")
-    # draw_horizontal_bars(benchmarks, 'cpu', 'events per second')
+    result_dir = "results"
+    parse_graphs(f"{result_dir}/sysbench_cpu_1.csv")
+    parse_graphs(f"{result_dir}/sysbench_cpu_2.csv")
+    parse_graphs(f"{result_dir}/sysbench_cpu_4.csv")
+    parse_graphs(f"{result_dir}/sysbench_cpu_8.csv")
+    draw_horizontal_bars(benchmarks, 'cpu', 'events per second')
 
-
-    # benchmarks = {}
-    # parse_graphs("remote/results/sysbench_disk_16K.csv")
-    # parse_graphs("remote/results/sysbench_disk_32K.csv")
-    # parse_graphs("remote/results/sysbench_disk_64K.csv")
-    # parse_graphs("remote/results/sysbench_disk_1M.csv")
-    # parse_graphs("remote/results/sysbench_disk_64M.csv")
-    # parse_graphs("remote/results/sysbench_disk_128M.csv")
-    # draw_horizontal_bars(benchmarks, 'disk_read', 'read, MiB/s')
-    # draw_horizontal_bars(benchmarks, 'disk_write', 'written, MiB/s')
 
     benchmarks = {}
-    parse_graphs("remote/results/sysbench_memory_1.csv")
-    parse_graphs("remote/results/sysbench_memory_2.csv")
-    parse_graphs("remote/results/sysbench_memory_4.csv")
-    parse_graphs("remote/results/sysbench_memory_8.csv")
-    parse_graphs("remote/results/sysbench_memory_16.csv")
+    parse_graphs(f"{result_dir}/sysbench_disk_16K.csv")
+    parse_graphs(f"{result_dir}/sysbench_disk_32K.csv")
+    parse_graphs(f"{result_dir}/sysbench_disk_64K.csv")
+    parse_graphs(f"{result_dir}/sysbench_disk_1M.csv")
+    parse_graphs(f"{result_dir}/sysbench_disk_64M.csv")
+    parse_graphs(f"{result_dir}/sysbench_disk_128M.csv")
+    draw_horizontal_bars(benchmarks, 'disk_read', 'read, MiB/s')
+    draw_horizontal_bars(benchmarks, 'disk_write', 'written, MiB/s')
+
+    benchmarks = {}
+    parse_graphs(f"{result_dir}/sysbench_memory_1.csv")
+    parse_graphs(f"{result_dir}/sysbench_memory_2.csv")
+    parse_graphs(f"{result_dir}/sysbench_memory_4.csv")
+    parse_graphs(f"{result_dir}/sysbench_memory_8.csv")
+    parse_graphs(f"{result_dir}/sysbench_memory_16.csv")
     print(benchmarks)
     draw_horizontal_bars(benchmarks, 'memory', 'transferred MiB/sec')
 

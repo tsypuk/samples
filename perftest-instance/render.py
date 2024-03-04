@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -143,6 +145,7 @@ def test(file_names, direction):
         download_speeds = download_speeds.round(2)
 
         data['Server Name'] = server_names.array
+        file_name = os.path.basename(file_name)
         data[f'{file_name}'] = download_speeds.array
 
     df = pd.DataFrame(data)
@@ -153,6 +156,7 @@ def test(file_names, direction):
     index = np.arange(len(df['Server Name']))
 
     for id, file_name in enumerate(file_names):
+        file_name = os.path.basename(file_name)
         # Plot bars for Machine1
         bar1 = ax.barh(index + id * bar_height, df[file_name], bar_height, label=f'Machine:{file_name}', alpha=0.7)
 
@@ -175,13 +179,16 @@ def test(file_names, direction):
     ax.set_yticks(index + bar_height)
     ax.set_yticklabels(df['Server Name'])
     ax.legend()
-
+    plt.savefig(f'speedtest_{direction}.png')
     plt.show()
 
 
 if __name__ == '__main__':
-    # render2('speedtest.csv')
+    # render2('/tmp/result/speedtest.csv')
     # render2('speedtest_2.csv')
     # grouped(['speedtest.csv', 'speedtest_2.csv'])
     # test(['speedtest.csv', 'speedtest_2.csv'], 'Download')
-    test(['speedtest.csv', 'speedtest_2.csv', 'speedtest_3.csv'], 'Upload')
+    # test(['speedtest.csv', 'speedtest_2.csv', 'speedtest_3.csv'], 'Upload')
+    result_dir = "results"
+    test([f'{result_dir}/speedtest.csv'], 'Upload')
+    test([f'{result_dir}/speedtest.csv'], 'Download')
