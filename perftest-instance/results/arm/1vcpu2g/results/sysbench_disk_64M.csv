@@ -1,0 +1,69 @@
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Extra file open flags: (none)
+128 files, 64MiB each
+8GiB total file size
+Block size 64MiB
+Number of IO requests: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Initializing worker threads...
+
+Threads started!
+
+Latency histogram (values are in milliseconds)
+       value  ------------- distribution ------------- count
+      41.851 |**********                               1
+      49.213 |**********                               1
+      51.018 |**********                               1
+      51.945 |**********                               1
+      53.850 |**********                               1
+      69.289 |**********                               1
+     130.128 |**********                               1
+     287.379 |**********                               1
+     419.448 |**********                               1
+     601.286 |**********                               1
+     877.615 |********************                     2
+     995.508 |**********                               1
+    1089.295 |**********                               1
+    1129.239 |**********                               1
+    1170.648 |********************                     2
+    1191.918 |**********                               1
+    1213.575 |**************************************** 4
+    1235.625 |******************************           3
+    1506.288 |**********                               1
+ 
+
+File operations:
+    reads/s:                      1.27
+    writes/s:                     0.79
+    fsyncs/s:                     20.34
+
+Throughput:
+    read, MiB/s:                  81.35
+    written, MiB/s:               50.85
+
+General statistics:
+    total time:                          12.5858s
+    total number of events:              26
+
+Latency (ms):
+         min:                                   41.51
+         avg:                                  781.38
+         max:                                 1495.09
+         95th percentile:                     1235.62
+         sum:                                20315.87
+
+Threads fairness:
+    events (avg/stddev):           13.0000/0.00
+    execution time (avg/stddev):   10.1579/0.17
+
+

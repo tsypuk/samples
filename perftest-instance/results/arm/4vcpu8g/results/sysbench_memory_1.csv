@@ -1,0 +1,131 @@
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Running memory speed test with the following options:
+  block size: 1KiB
+  total size: 102400MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Latency histogram (values are in milliseconds)
+       value  ------------- distribution ------------- count
+       0.001 |**************************************** 32794527
+       0.001 |                                         2
+       0.001 |                                         1
+       0.002 |                                         1
+       0.002 |                                         7
+       0.002 |                                         13
+       0.002 |                                         9
+       0.002 |                                         13
+       0.002 |                                         20
+       0.002 |                                         18
+       0.002 |                                         16
+       0.002 |                                         20
+       0.002 |                                         28
+       0.002 |                                         23
+       0.002 |                                         39
+       0.002 |                                         38
+       0.002 |                                         58
+       0.002 |                                         55
+       0.002 |                                         66
+       0.002 |                                         80
+       0.002 |                                         98
+       0.002 |                                         98
+       0.002 |                                         102
+       0.002 |                                         88
+       0.002 |                                         114
+       0.002 |                                         70
+       0.003 |                                         58
+       0.003 |                                         54
+       0.003 |                                         53
+       0.003 |                                         48
+       0.003 |                                         51
+       0.003 |                                         40
+       0.003 |                                         36
+       0.003 |                                         39
+       0.003 |                                         35
+       0.003 |                                         29
+       0.003 |                                         30
+       0.003 |                                         36
+       0.003 |                                         49
+       0.003 |                                         41
+       0.003 |                                         49
+       0.003 |                                         40
+       0.003 |                                         33
+       0.003 |                                         24
+       0.003 |                                         28
+       0.004 |                                         17
+       0.004 |                                         12
+       0.004 |                                         17
+       0.004 |                                         8
+       0.004 |                                         4
+       0.004 |                                         3
+       0.004 |                                         7
+       0.004 |                                         2
+       0.004 |                                         3
+       0.004 |                                         3
+       0.004 |                                         5
+       0.004 |                                         2
+       0.004 |                                         10
+       0.004 |                                         16
+       0.005 |                                         15
+       0.005 |                                         7
+       0.005 |                                         9
+       0.005 |                                         5
+       0.005 |                                         6
+       0.005 |                                         6
+       0.005 |                                         8
+       0.005 |                                         2
+       0.005 |                                         5
+       0.005 |                                         4
+       0.005 |                                         1
+       0.006 |                                         1
+       0.006 |                                         1
+       0.006 |                                         1
+       0.006 |                                         1
+       0.007 |                                         1
+       0.008 |                                         2
+       0.008 |                                         1
+       0.009 |                                         1
+       0.010 |                                         1
+       0.011 |                                         1
+       0.013 |                                         1
+       0.015 |                                         1
+       0.015 |                                         2
+       0.019 |                                         1
+       0.019 |                                         1
+       0.070 |                                         1
+       0.071 |                                         1
+       0.073 |                                         1
+       0.074 |                                         2
+       0.082 |                                         1
+ 
+Total operations: 32796577 (3278766.65 per second)
+
+32027.91 MiB transferred (3201.92 MiB/sec)
+
+
+General statistics:
+    total time:                          10.0017s
+    total number of events:              32796577
+
+Latency (ms):
+         min:                                    0.00
+         avg:                                    0.00
+         max:                                    0.08
+         95th percentile:                        0.00
+         sum:                                 5739.55
+
+Threads fairness:
+    events (avg/stddev):           32796577.0000/0.00
+    execution time (avg/stddev):   5.7395/0.00
+
+

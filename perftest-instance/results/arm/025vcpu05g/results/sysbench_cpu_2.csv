@@ -1,0 +1,99 @@
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Prime numbers limit: 20000
+
+Initializing worker threads...
+
+Threads started!
+
+Latency histogram (values are in milliseconds)
+       value  ------------- distribution ------------- count
+       0.989 |**************************************** 1582
+       1.007 |******                                   251
+       1.025 |***                                      117
+       1.044 |*                                        49
+       1.063 |*                                        27
+       1.082 |*                                        33
+       1.102 |                                         19
+       1.122 |                                         19
+       1.142 |                                         14
+       1.163 |*                                        20
+       1.184 |                                         15
+       1.205 |                                         14
+       1.227 |                                         7
+       1.250 |                                         5
+       1.272 |                                         8
+       1.295 |                                         6
+       1.319 |                                         6
+       1.343 |                                         7
+       1.367 |                                         1
+       1.392 |                                         2
+       1.443 |                                         2
+       1.469 |                                         2
+       1.523 |                                         2
+       1.551 |                                         2
+       1.579 |                                         2
+       1.637 |                                         1
+       1.697 |                                         1
+       1.759 |                                         1
+       1.824 |                                         1
+       1.996 |                                         1
+       2.069 |                                         1
+       2.106 |                                         1
+       2.389 |                                         1
+       2.810 |                                         1
+       3.425 |                                         1
+       3.488 |                                         1
+       4.329 |                                         1
+       7.842 |                                         1
+       8.428 |                                         1
+      10.651 |                                         1
+      11.242 |                                         1
+      17.010 |                                         1
+      26.681 |                                         1
+      29.194 |                                         2
+      31.945 |                                         1
+      49.213 |                                         1
+      62.193 |                                         1
+      63.323 |                                         1
+      70.548 |                                         1
+      78.597 |                                         1
+      81.479 |*                                        52
+      82.959 |                                         1
+      86.002 |                                         3
+      87.564 |                                         6
+      89.155 |                                         3
+      90.775 |***                                      101
+      92.424 |                                         5
+      94.104 |                                         7
+      95.814 |                                         4
+      97.555 |                                         2
+      99.327 |                                         3
+     102.969 |                                         1
+     106.745 |                                         2
+     196.894 |                                         1
+ 
+CPU speed:
+    events per second:   242.82
+
+General statistics:
+    total time:                          10.0023s
+    total number of events:              2429
+
+Latency (ms):
+         min:                                    0.98
+         avg:                                    8.16
+         max:                                  196.55
+         95th percentile:                       90.78
+         sum:                                19817.96
+
+Threads fairness:
+    events (avg/stddev):           1214.5000/36.50
+    execution time (avg/stddev):   9.9090/0.00
+
+

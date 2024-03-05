@@ -1,0 +1,106 @@
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Extra file open flags: (none)
+128 files, 64MiB each
+8GiB total file size
+Block size 64MiB
+Number of IO requests: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Initializing worker threads...
+
+Threads started!
+
+Latency histogram (values are in milliseconds)
+       value  ------------- distribution ------------- count
+       0.001 |*****                                    3
+       0.002 |*****                                    3
+       0.002 |**                                       1
+       0.002 |**                                       1
+       0.002 |**                                       1
+       0.002 |***                                      2
+       0.002 |***                                      2
+       0.002 |**                                       1
+       0.002 |**                                       1
+       0.002 |**                                       1
+       0.002 |***                                      2
+       0.002 |**                                       1
+       0.003 |**                                       1
+       0.003 |**                                       1
+       0.005 |**                                       1
+       0.007 |**                                       1
+       0.007 |***                                      2
+       0.007 |**                                       1
+       0.009 |**                                       1
+       0.010 |**                                       1
+       0.012 |**                                       1
+      13.704 |**                                       1
+      13.953 |**                                       1
+      14.207 |**                                       1
+      14.465 |*******                                  4
+      14.728 |**************************************** 24
+      14.995 |**********************                   13
+      15.268 |************                             7
+      15.545 |**                                       1
+      15.828 |**                                       1
+      17.954 |***                                      2
+      18.280 |***                                      2
+      19.645 |***********************                  14
+      20.002 |********************                     12
+      20.366 |*******                                  4
+      27.165 |**                                       1
+      33.116 |**                                       1
+      35.589 |**                                       1
+      44.976 |**                                       1
+      74.464 |**                                       1
+     125.525 |**                                       1
+     150.290 |***                                      2
+     376.494 |***                                      2
+     569.667 |**                                       1
+     657.933 |**                                       1
+     682.059 |**                                       1
+    1191.918 |**                                       1
+    1235.625 |**                                       1
+    1327.905 |**                                       1
+    1376.599 |**                                       1
+    1401.611 |**                                       1
+    1427.078 |**                                       1
+    1453.007 |**                                       1
+    1506.288 |**                                       1
+    1533.657 |*****                                    3
+    1678.143 |**                                       1
+ 
+
+File operations:
+    reads/s:                      2.93
+    writes/s:                     2.03
+    fsyncs/s:                     14.74
+
+Throughput:
+    read, MiB/s:                  187.37
+    written, MiB/s:               130.21
+
+General statistics:
+    total time:                          20.1512s
+    total number of events:              141
+
+Latency (ms):
+         min:                                    0.00
+         avg:                                  155.90
+         max:                                 1682.66
+         95th percentile:                     1401.61
+         sum:                                21981.29
+
+Threads fairness:
+    events (avg/stddev):           70.5000/12.50
+    execution time (avg/stddev):   10.9906/0.24
+
+

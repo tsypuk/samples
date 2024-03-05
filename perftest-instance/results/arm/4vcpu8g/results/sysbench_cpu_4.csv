@@ -1,0 +1,75 @@
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 4
+Initializing random number generator from current time
+
+
+Prime numbers limit: 20000
+
+Initializing worker threads...
+
+Threads started!
+
+Latency histogram (values are in milliseconds)
+       value  ------------- distribution ------------- count
+       0.989 |**************************************** 39458
+       1.007 |*                                        694
+       1.025 |                                         192
+       1.044 |                                         45
+       1.063 |                                         23
+       1.082 |                                         15
+       1.102 |                                         4
+       1.142 |                                         2
+       1.163 |                                         3
+       1.184 |                                         2
+       1.205 |                                         2
+       1.227 |                                         2
+       1.250 |                                         7
+       1.272 |                                         5
+       1.295 |                                         3
+       1.319 |                                         1
+       1.523 |                                         1
+       1.551 |                                         1
+       1.608 |                                         1
+       1.759 |                                         1
+       1.925 |                                         1
+       2.032 |                                         1
+       2.106 |                                         1
+       2.184 |                                         1
+       2.223 |                                         1
+       2.347 |                                         1
+       2.433 |                                         1
+       3.364 |                                         1
+       4.101 |                                         1
+       4.176 |                                         1
+       4.652 |                                         1
+       4.823 |                                         1
+       4.999 |                                         1
+       5.090 |                                         1
+       5.879 |                                         1
+       6.790 |                                         1
+       7.039 |                                         1
+       7.297 |                                         1
+       7.985 |                                         1
+       9.910 |                                         1
+ 
+CPU speed:
+    events per second:  4046.80
+
+General statistics:
+    total time:                          10.0024s
+    total number of events:              40482
+
+Latency (ms):
+         min:                                    0.98
+         avg:                                    0.99
+         max:                                    9.85
+         95th percentile:                        0.99
+         sum:                                39993.11
+
+Threads fairness:
+    events (avg/stddev):           10120.5000/23.63
+    execution time (avg/stddev):   9.9983/0.00
+
+

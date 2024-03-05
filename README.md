@@ -1,5 +1,10 @@
 # Samples for posts and articles:
 
+## x86-64 vs arm-64 benchmark results
+
+- [arm](perftest-instance/results/arm)
+- [x86](perftest-instance/results/x86)
+- 
 ## EC2 VoIP Asterisk & FreePBX
 
 - [ec2_asterisk.sh](asterisk/ec2_asterisk.sh)
