@@ -1,0 +1,24 @@
+[toplevel]
+
+mcdc2 =
+  !f() {
+    if [ "$1" == "make" ]; then
+      mcdc dynamo $@
+    elif [ "$1" == "cat" ]; then
+      mcdc s3 $@
+    else
+      aws s3 $@
+    fi
+  }; f
+
+mcdc =
+  !f() {
+    mcdc aws $@
+  }; f
+
+myip =
+  !f() {
+    dig +short myip.opendns.com @resolver1.opendns.com
+  }; f
+
+whoami = sts get-caller-identity
