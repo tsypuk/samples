@@ -1,0 +1,44 @@
+Executing command with naive:1000req:1worker:1pool:1entity Iteration with pool 1 took 239 seconds.
+Executing command with naive:1000req:1worker:2pool:1entity Iteration with pool 2 took 121 seconds.
+Executing command with naive:1000req:1worker:4pool:1entity Iteration with pool 4 took 64 seconds.
+Executing command with naive:1000req:1worker:8pool:1entity Iteration with pool 8 took 38 seconds.
+Executing command with naive:1000req:1worker:16pool:1entity Iteration with pool 16 took 22 seconds.
+Executing command with naive:1000req:1worker:32pool:1entity Iteration with pool 32 took 24 seconds.
+Executing command with naive:1000req:1worker:64pool:1entity Iteration with pool 64 took 26 seconds.
+Executing command with naive:1000req:1worker:128pool:1entity Iteration with pool 128 took 35 seconds.
+
+Executing command with naive:1000req:2worker:1pool:2entity Iteration with pool 1 took 291 seconds.
+Executing command with naive:1000req:2worker:2pool:2entity Iteration with pool 2 took 121 seconds.
+Executing command with naive:1000req:2worker:4pool:2entity Iteration with pool 4 took 65 seconds.
+Executing command with naive:1000req:2worker:8pool:2entity Iteration with pool 8 took 37 seconds.
+Executing command with naive:1000req:2worker:16pool:2entity Iteration with pool 16 took 29 seconds.
+Executing command with naive:1000req:2worker:32pool:2entity Iteration with pool 32 took 29 seconds.
+Executing command with naive:1000req:2worker:64pool:2entity Iteration with pool 64 took 33 seconds.
+Executing command with naive:1000req:2worker:128pool:2entity Iteration with pool 128 took 61 seconds.
+
+Executing command with naive:1000req:3worker:1pool:3entity Iteration with pool 1 took 238 seconds.
+Executing command with naive:1000req:3worker:2pool:3entity Iteration with pool 2 took 123 seconds.
+Executing command with naive:1000req:3worker:4pool:3entity Iteration with pool 4 took 66 seconds.
+Executing command with naive:1000req:3worker:8pool:3entity Iteration with pool 8 took 47 seconds.
+Executing command with naive:1000req:3worker:16pool:3entity Iteration with pool 16 took 36 seconds.
+Executing command with naive:1000req:3worker:32pool:3entity Iteration with pool 32 took 52 seconds.
+Executing command with naive:1000req:3worker:64pool:3entity Iteration with pool 64 took 55 seconds.
+Executing command with naive:1000req:3worker:128pool:3entity Iteration with pool 128 took 71 seconds.
+
+Executing command with naive:1000req:4worker:1pool:4entity Iteration with pool 1 took 232 seconds.
+Executing command with naive:1000req:4worker:2pool:4entity Iteration with pool 2 took 118 seconds.
+Executing command with naive:1000req:4worker:4pool:4entity Iteration with pool 4 took 62 seconds.
+Executing command with naive:1000req:4worker:8pool:4entity Iteration with pool 8 took 40 seconds.
+Executing command with naive:1000req:4worker:16pool:4entity Iteration with pool 16 took 35 seconds.
+Executing command with naive:1000req:4worker:32pool:4entity Iteration with pool 32 took 44 seconds.
+Executing command with naive:1000req:4worker:64pool:4entity Iteration with pool 64 took 49 seconds.
+Executing command with naive:1000req:4worker:128pool:4entity Iteration with pool 128 took 75 seconds.
+Executing command with naive:1000req:5worker:1pool:5entity Iteration with pool 1 took 230 seconds.
+
+Executing command with naive:1000req:5worker:2pool:5entity Iteration with pool 2 took 117 seconds.
+Executing command with naive:1000req:5worker:4pool:5entity Iteration with pool 4 took 62 seconds.
+Executing command with naive:1000req:5worker:8pool:5entity Iteration with pool 8 took 42 seconds.
+Executing command with naive:1000req:5worker:16pool:5entity Iteration with pool 16 took 41 seconds.
+Executing command with naive:1000req:5worker:32pool:5entity Iteration with pool 32 took 47 seconds.
+Executing command with naive:1000req:5worker:64pool:5entity Iteration with pool 64 took 64 seconds.
+Executing command with naive:1000req:5worker:128pool:5entity Iteration with pool 128 took 101 seconds.
