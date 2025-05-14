@@ -1,0 +1,9 @@
+colors:
+  - "#FF9900"
+  - "#3366FF"
+numberOfImages: 5
+width: 1280
+height: 720
+seed: 12
+cfgScale: 6.5
+summaryModel: "facebook/bart-large-cnn"
